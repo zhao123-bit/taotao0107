@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhao.mapper.TbItemMapper">
+	<select id="findTbItemById" parameterType="long" resultType="com.zhao.bean.TbItem">
+		SELECT * FROM tbitem WHERE id = #{id}
+	</select>
+	<select id="findTbItemCount" resultType="int">
+		SELECT COUNT(*) FROM tbitem
+	</select>
+	
+	<select id="findTbItemByPage" parameterType="int" resultType="com.zhao.bean.TbItem">
+		SELECT * FROM tbitem LIMIT #{index},#{pageSize}
+	</select>
+</mapper>
